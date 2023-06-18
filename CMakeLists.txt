@@ -9,3 +9,4 @@ include_directories(src)
 file(GLOB_RECURSE SRC_FILES src/*.h src/*/*.h src/*.cpp src/*/*.cpp)
 
 add_executable(console_apps ${SRC_FILES})
+
