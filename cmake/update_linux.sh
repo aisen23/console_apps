@@ -6,18 +6,5 @@ echo ${SCRIPT_DIR}
 cd ${SCRIPT_DIR}
 cd ..
 
-if [[ ! -d "build" ]]; then
-   mkdir build
-fi
-
-cd build
-
-if [[ -d "linux" ]]; then
-    rm -rf linux
-fi
-
-mkdir linux
-cd linux
-
 echo "Generating linux project:"
-cmake "../.."
+cmake -S "." -B "build" 

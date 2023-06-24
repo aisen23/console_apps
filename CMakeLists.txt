@@ -8,5 +8,7 @@ project(console_apps VERSION 1.0.0)
 include_directories(src)
 file(GLOB_RECURSE SRC_FILES src/*.h src/*/*.h src/*.cpp src/*/*.cpp)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 add_executable(console_apps ${SRC_FILES})
 
