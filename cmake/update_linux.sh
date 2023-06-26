@@ -6,5 +6,9 @@ echo ${SCRIPT_DIR}
 cd ${SCRIPT_DIR}
 cd ..
 
+if [[ -d "build" ]]; then
+    rm -rf build/*
+fi
+
 echo "Generating linux project:"
 cmake -S "." -B "build" 
