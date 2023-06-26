@@ -1,22 +1,28 @@
-#include "Timer.h"
 #include "FPS.h"
+#include "Image.h"
+#include "ImageFactory.h"
 
-#include <string>
-#include <vector>
+#include <iostream>
 
 int main() 
 {
-    CA::FPS fpsController(90, true);
-    while (true) {
+    auto imageType = CA::ImageType::Heart;
+    CA::Image* image = CA::ImageFactory::Create(imageType);
+
+    CA::FPS fpsController(140, true);
+    while (image) {
         fpsController.Update();
 
-        std::vector<std::string> strings;
-        for (int i = 0; i != 300; ++i) {
-            strings.push_back("Hello " + std::to_string(i));
-        }
+        image->Display();
+        image->Update();
+        
+        std::cout << "\n\n" << "NOTE: Press ctrl+c to stop the application" << '\n';
+        fpsController.Display();
 
         fpsController.TryPause();
     }
+
+    delete image;
 
     return 0;
 }

@@ -15,9 +15,11 @@ namespace CA
         
         void Update();
         void TryPause();
+        void Display() const;
 
     private:
         int _fps = 90;
+        int _fpsToDisplay = 90;
 
         bool _display = false;
         std::unique_ptr<Timer> _timer;

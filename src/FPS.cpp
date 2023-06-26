@@ -19,7 +19,7 @@ CA::FPS::~FPS() {
 
 void CA::FPS::Update() {
     if (_timer)
-        _timer->Reset(); 
+        _timer->Reset();
 }
 
 void CA::FPS::TryPause() {
@@ -34,8 +34,11 @@ void CA::FPS::TryPause() {
     }
 
     if (_display) {
-        int fps = 1000000 / _timer->GetDuration().count();
-        std::cout << "FPS: " << fps << '\n';
+        _fpsToDisplay = 1000000 / _timer->GetDuration().count();
     }
 }
     
+void CA::FPS::Display() const {
+    if (_display)
+        std::cout << "\n" << "FPS: " << _fpsToDisplay << '\n';
+}
