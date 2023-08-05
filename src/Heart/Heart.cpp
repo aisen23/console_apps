@@ -33,9 +33,7 @@ CA::Heart::Heart() {
     _timer = std::make_unique<Timer>();
 }
 
-void CA::Heart::Display() const {
-    CA::Image::Display();
-
+void CA::Heart::DoDisplay() const {
     const std::string& data = (_isScaled ? _scaled : _common);
 
     std::cout << data;

@@ -4,6 +4,7 @@
 
 void CA::Image::Display() const {
     Flush();
+    DoDisplay();
 }
 
 void CA::Image::Flush() const {

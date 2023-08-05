@@ -14,8 +14,10 @@ namespace CA
     public:
         Heart();
 
-        void Display() const;
         void Update();
+
+    protected:
+        void DoDisplay() const override;
 
     private:
         bool _isScaled = false;

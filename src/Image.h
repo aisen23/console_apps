@@ -12,8 +12,11 @@ namespace CA
     public:
         virtual ~Image() = default;
 
-        virtual void Display() const;
+        void Display() const;
         virtual void Update() = 0;
+
+    protected:
+        virtual void DoDisplay() const = 0;
 
     private:
         void Flush() const;
