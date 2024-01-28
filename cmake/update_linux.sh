@@ -11,4 +11,4 @@ if [[ -d "build" ]]; then
 fi
 
 echo "Generating linux project:"
-cmake -S "." -B "build" 
+cmake -S "." -B "build" -DCMAKE_EXPORT_COMPILE_COMMANDS=1
